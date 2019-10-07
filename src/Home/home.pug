@@ -1,0 +1,25 @@
+.container
+  .header: h1 Currency Converter
+  .date {{ getDate }}
+  ul.currencies
+    template(v-for="currency in initializeCurrency")
+      li(:class="currency.active ? 'base-currency': '' ", :data-currency="currency.abbreviation")
+        img.flag(:src="currency.flagURL") 
+        .info
+          p.input 
+            span.currency-symbol {{ currency.symbol }}
+            input(v-model="form.currencyValue", @focus="setBaseCurrency(currency.abbreviation)")
+          p.currency-name {{ currency.abbreviation }} - {{ currency.name }}
+          p.base-currency-rate {{ defaultExchangeRate }} {{ baseCurrency }} = {{ ratesCurrency(currency.abbreviation) }} {{ currency.abbreviation }}
+        span.close(@click="removeCurrencyList(currency.abbreviation)") &times; 
+  button.add-currency-btn(:class="showCurrencyList ? 'open' : ''",@click="openListCurrency()")
+    i.fas.fa-long-arrow-alt-left
+    |Add Currency
+  ul.add-currency-list
+    template(v-for="currency in currencies") 
+      li(
+        :class="currency.disabled ? 'disabled' : '' ", 
+        @click="addToCurrencyList(currency.disabled,currency.abbreviation)"
+      )
+        img.flag(:src="currency.flagURL") 
+        span {{ currency.abbreviation }} - {{ currency.name }}

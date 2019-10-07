@@ -1,0 +1,144 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+body 
+  font-family: 'Montserrat', sans-serif
+  background-color: #505562
+  color: #fff
+
+.container 
+  width: 500px
+  margin: 20px auto
+  user-select: none
+  overflow-x: hidden
+  position: relative
+
+.header
+  background-color: #2d2d37
+  text-align: center
+  padding: 1.75rem
+  & h1 
+    font-size: 2.2rem
+.date 
+  background-color: #222
+  text-align: right
+  font-size: 0.75rem
+  padding: 0.75rem 2rem 0.75rem 0
+
+ul 
+  &.currencies
+    height: calc(100vh - 40px - 100px - 40px - 58px)
+    background-color: #222
+    padding: 1rem 1.5rem
+    overflow-y: auto
+    & li 
+      background-color: #2d2d37
+      border-radius: 5px
+      list-style: none
+      padding: 1rem 1rem 0.75rem 1rem
+      margin-bottom: 1rem
+      position: relative
+      &.base-currency 
+        background-color: #264d73
+      &:last-child
+        margin:
+          bottom: 0
+      & .close 
+        position: absolute
+        top: 0
+        right: 0
+        padding: 0 0.5rem
+        font-size: 1.5rem
+        color: #666
+        cursor: pointer
+        &:hover 
+          color: #fff
+  &.add-currency-list
+    position: absolute
+    bottom: 54px
+    left: 105%
+    background-color: #f1f1f1
+    color: #333
+    width: 100%
+    height: calc(100vh - 40px - 100px - 55px)
+    overflow-y: auto
+    transition: all 0.25s
+    & li 
+      list-style: none
+      padding: 0.75rem
+      border-bottom: 1px solid #ddd
+      &:hover 
+        cursor: pointer
+      .flag
+        width: 3rem
+        height: 2rem
+        vertical-align: middle
+      span 
+        margin-left: 1rem
+        font-weight: bold
+.flag 
+  width: 60px
+  height: 40px
+  border: 1px solid #fff
+  vertical-align: top
+
+.info
+  display: inline-block
+  width: 78%
+  & .currency-name 
+    font-size: 1rem
+    font-weight: bold
+    margin-bottom: 0.5rem
+    margin-left: 4rem
+  & .base-currency-rate
+    font-size: 0.8rem
+    margin-left: 4rem
+  & .input 
+    & span 
+      font-size: 1.5rem
+      display: inline-block
+      width: 4rem
+      text-align: center
+    & input 
+      font-size: 1.5rem
+      width: 78%
+      background-color: transparent
+      border: 2px solid #fff
+      border-radius: 5px
+      color: #fff
+      padding: 0.3rem
+      margin-bottom: 0.75rem
+
+.add-currency-btn
+  background-color: #00b386
+  color: #fff
+  padding: 1rem
+  font-size: 1.2rem
+  font-weight: bold
+  border: none
+  border-top: 3px solid #222
+  outline: none
+  width: 100%
+  cursor: pointer
+  transition: background-color 0.25s
+  position: relative
+  &.open 
+    background-color: #d9534f
+    & i 
+      opacity: 1
+      left: 1.25rem
+    & + ul.add-currency-list
+      left: 0
+      & li:hover
+        background-color: #ddd
+      & li.disabled
+        opacity: 0.7
+        cursor: not-allowed
+  & i 
+    position: absolute
+    top: 0.6rem
+    left: 30%
+    font-size: 2rem
+    opacity: 0
+    transition: all 0.25s

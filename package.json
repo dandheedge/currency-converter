@@ -1,0 +1,25 @@
+{
+  "name": "currency-converter",
+  "version": "1.0.0",
+  "description": "Simple currency converter",
+  "author": "dandhi.damarrama",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.6.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "nuxt": "^2.0.0",
+    "pug": "^2.0.4",
+    "pug-plain-loader": "^1.0.0",
+    "sass": "^1.22.10",
+    "sass-loader": "^7.3.1",
+    "sass-resources-loader": "^2.0.1",
+    "tachyons": "^4.11.1"
+  }
+}
