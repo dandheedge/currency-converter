@@ -13,7 +13,6 @@ export default {
   },
   data() {
     return {
-      defaultExchangeRate: 10,
       form: {
         currencyValue: 10
       },
