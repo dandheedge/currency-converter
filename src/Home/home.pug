@@ -10,7 +10,7 @@
             span.currency-symbol {{ currency.symbol }}
             input(v-model="form.currencyValue", @focus="setBaseCurrency(currency.abbreviation)")
           p.currency-name {{ currency.abbreviation }} - {{ currency.name }}
-          p.base-currency-rate {{ defaultExchangeRate }} {{ baseCurrency }} = {{ ratesCurrency(currency.abbreviation) }} {{ currency.abbreviation }}
+          p.base-currency-rate {{ form.currencyValue }} {{ baseCurrency }} = {{ ratesCurrency(currency.abbreviation) }} {{ currency.abbreviation }}
         span.close(@click="removeCurrencyList(currency.abbreviation)") &times; 
   button.add-currency-btn(:class="showCurrencyList ? 'open' : ''",@click="openListCurrency()")
     i.fas.fa-long-arrow-alt-left
